@@ -30,7 +30,7 @@ const evalPolish = (expression) => {
             }
 
         } else  {
-            stack.push(parseInt(token));
+            stack.push(parseFloat(token));
         }
     }
     return stack.pop();
