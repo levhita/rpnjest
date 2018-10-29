@@ -1,0 +1,23 @@
+{
+  "name": "rpnjest",
+  "version": "1.0.0",
+  "description": "En este ejercicio vamos a implementar una versión simplificada de la [notación polaca inversa](https://en.wikipedia.org/wiki/Reverse_Polish_notation), utilizando los **métodos** básicos disponibles en los **Arrays** y un poco de manipulación de **Stings**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levhita/rpnjest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levhita/rpnjest/issues"
+  },
+  "homepage": "https://github.com/levhita/rpnjest#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
