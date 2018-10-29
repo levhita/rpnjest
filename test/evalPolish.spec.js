@@ -44,4 +44,8 @@ describe('evalPolish', () => {
     test(' "2 2 2 +" should throw an Error', () => {
         expect(() => evalPolish('+')).toThrow(Error);
     });
+
+    test(' "-1 2 *" should return -2', () => {
+        expect(evalPolish('-1 2 *')).toBe(-2);
+    });
 });
