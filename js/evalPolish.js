@@ -10,6 +10,10 @@ const evalPolish = (expression) => {
                 throw new Error('Invalid Operation Token');
             }
 
+            if ( stack.length < 2 ) {
+                throw new Error('Unbalanced Expression');
+            }
+
             const second = stack.pop();
             const first = stack.pop();
             
@@ -32,6 +36,9 @@ const evalPolish = (expression) => {
         } else  {
             stack.push(parseFloat(token));
         }
+    }
+    if (stack.length > 1){
+        throw new Error('Unbalanced Expression');  
     }
     return stack.pop();
 };
