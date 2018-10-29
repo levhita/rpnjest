@@ -48,4 +48,23 @@ describe('evalPolish', () => {
     test(' "-1 2 *" should return -2', () => {
         expect(evalPolish('-1 2 *')).toBe(-2);
     });
+
+    test(' "pi sin" should return 0', () => {
+        expect(evalPolish('pi sin')).toBeCloseTo(0);
+    });
+    test(' "pi cos" should return -1', () => {
+        expect(evalPolish('pi cos')).toBeCloseTo(-1);
+    });
+
+    test(' "4 sqr" should return -1', () => {
+        expect(evalPolish('4 sqr')).toBeCloseTo(2);
+    });
+
+    test(' "e ln" should return 1', () => {
+        expect(evalPolish('e ln')).toBeCloseTo(1);
+    });
+
+    test(' "10 log" should return 1', () => {
+        expect(evalPolish('10 log')).toBeCloseTo(1);
+    });
 });
