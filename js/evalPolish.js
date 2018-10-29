@@ -1,31 +1,34 @@
 const evalPolish = (expression) => {
+    const operations = ['+','-','*','/'];
     const tokens = expression.split(" ");
     const stack = [];
+    
     while( token = tokens.shift() ) {
         if ( isNaN(token) ){
+            
+            if (operations.indexOf(token) == -1) {
+                throw new Error('Invalid Operation Token');
+            }
+
+            const first = stack.pop();
+            const second = stack.pop();
+            
             if (token == '+'){
-                const first = stack.pop();
-                const second = stack.pop();
                 stack.push( first + second );
             }
-
-            if (token == '-'){
-                const first = stack.pop();
-                const second = stack.pop();
+            
+            if (token == '-'){     
                 stack.push( first - second );
             }
-
+            
             if (token == '*'){
-                const first = stack.pop();
-                const second = stack.pop();
                 stack.push( first * second );
             }
-
+            
             if (token == '/'){
-                const first = stack.pop();
-                const second = stack.pop();
                 stack.push( first / second );
             }
+
         } else  {
             stack.push(parseInt(token));
         }
