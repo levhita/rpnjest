@@ -8,6 +8,24 @@ const evalPolish = (expression) => {
                 const second = stack.pop();
                 stack.push( first + second );
             }
+
+            if (token == '-'){
+                const first = stack.pop();
+                const second = stack.pop();
+                stack.push( first - second );
+            }
+
+            if (token == '*'){
+                const first = stack.pop();
+                const second = stack.pop();
+                stack.push( first * second );
+            }
+
+            if (token == '/'){
+                const first = stack.pop();
+                const second = stack.pop();
+                stack.push( first / second );
+            }
         } else  {
             stack.push(parseInt(token));
         }
