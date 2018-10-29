@@ -10,8 +10,8 @@ const evalPolish = (expression) => {
                 throw new Error('Invalid Operation Token');
             }
 
-            const first = stack.pop();
             const second = stack.pop();
+            const first = stack.pop();
             
             if (token == '+'){
                 stack.push( first + second );

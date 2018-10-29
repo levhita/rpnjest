@@ -24,4 +24,12 @@ describe('evalPolish', () => {
     test(' "¿" should throw an Error', ()=>{
         expect( () => evalPolish('¿') ).toThrow(Error);
     });
+
+    test(' "2 4 /" should return 1',()=>{
+        expect(evalPolish('2 4 /')).toBe(0.5);
+    });
+    
+    test(' "4 2 /" should return 1',()=>{
+        expect(evalPolish('4 2 /')).toBe(2);
+    });
 });
