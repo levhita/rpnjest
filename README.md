@@ -133,22 +133,19 @@ Operación: 3 - 7 = -4
 ## TDD
 Test Driven Development es una forma de desarrollo en la que las pruebas se hacen antes del código que la resuelva.
 
-  1.- Haz una prueba que represente a un requerimiento, deja que falle.
-  2.- Haz el código mínimo que pase la prueba.
-  3.- Repite con el siguiente requerimiento.
-  4.- Refactorea de ser necesario, debes de seguir pasando las pruebas anteriores.
+  1. Haz una prueba que represente a un requerimiento, deja que falle.
+  2. Haz el código mínimo que pase la prueba.
+  3. Repite con el siguiente requerimiento.
+  4. Refactorea de ser necesario, debes de seguir pasando las pruebas anteriores.
 
 ### Requerimientos
-  1.- Si se introduce 1 solo valor, debería simplemente retornarlo.
-  2.- Debe de poder con todas las operaciones comunes: + * / -
-  3.- En caso de *, / y -, el ordén es importante: 2 4 - == -2
-  4.- "2 +", no tiene la cantidad suficiente de operandos para aplicar la operación, debería lanzar un error.
-  5.- Debe de soportar números negativos, flotantes y de más de 1 digito.
-  6.- Operaciones invalidas deben de lanzar un error.
-  7.- Cadenas vacias deben de lanzar un error.
-  8.- ¿Soporta cantidad de espacios variables sin tronar?
-  9.- Operaciones unitarias como sin, ln, log deberían de poderse utilizar.
-
   
-
-
+  1. Si se introduce 1 solo valor, debería simplemente retornarlo.
+  2. Debe de poder con todas las operaciones comunes: + * / -
+  3. En caso de *, / y -, el ordén es importante: 2 4 - == -2
+  4. "2 +", no tiene la cantidad suficiente de operandos para aplicar la operación, debería lanzar un error.
+  5. Debe de soportar números negativos, flotantes y de más de 1 digito.
+  6. Operaciones invalidas deben de lanzar un error.
+  7. Cadenas vacias deben de lanzar un error.
+  8. ¿Soporta cantidad de espacios variables sin tronar?
+  9. Operaciones unitarias como sin, ln, log deberían de poderse utilizar.
