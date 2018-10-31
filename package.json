@@ -10,6 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/levhita/rpnjest.git"
   },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
