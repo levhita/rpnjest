@@ -2,17 +2,30 @@ const evalPolish = (expression) => {
     const operations = ['+','-','*','/', '^'];
     const unary = ['sin', 'cos', 'tan', 'log', 'ln', 'exp', 'sqr'];
     const symbols = ['pi', 'e'];
+    const functions = {
+        sin: 'sin',
+        cos: 'cos',
+        tan: 'tan',
+        ln: 'log',
+        log: 'log10',
+        exp: 'exp',
+        sqr: 'sqrt',
+    };
     const tokens = expression.split(" ").filter(el => el!=='');
     const stack = [];
     
+    const isSymbol    = (token) => symbols.indexOf(token) !== -1 ;
+    const isUnary     = (token) => unary.indexOf(token) !== -1 ;
+    const isOperation = (token) => operations.indexOf(token) !== -1 ;
+    
     while( token = tokens.shift() ) {
-        if ( isNaN(token) && symbols.indexOf(token) ==-1 ){
+        if ( isNaN(token) &&  !isSymbol(token) ){
             
-            if (operations.indexOf(token) == -1 && unary.indexOf(token) ==-1) {
+            if ( !isOperation(token) && !isUnary(token) ) {
                 throw new Error('Invalid Operation Token');
             }
             
-            if (operations.indexOf(token) !== -1) {
+            if ( isOperation(token) ) {
                 
                 if ( stack.length < 2 ) throw new Error('Unbalanced Expression');
 
@@ -25,19 +38,7 @@ const evalPolish = (expression) => {
             } else {
                 if ( stack.length < 1 ) throw new Error('Unbalanced Expression');
 
-                const operand = stack.pop();
-                
-                functions = {
-                    sin: 'sin',
-                    cos: 'cos',
-                    tan: 'tan',
-                    ln: 'log',
-                    log: 'log10',
-                    exp: 'exp',
-                    sqr: 'sqrt',
-                };
-                stack.push(Math[functions[token]](operand));
-
+                stack.push(Math[functions[token]](stack.pop()));
             }
         } else  {
             if(token=='pi'){
