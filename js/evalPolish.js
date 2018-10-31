@@ -89,6 +89,10 @@ const evalPolish = (expression) => {
         throw new Error('Unbalanced Expression');  
     }
     
+    if (stack.length == 0){
+        throw new Error('Empty Expression');  
+    }
+    
     return stack.pop();
 };
 
