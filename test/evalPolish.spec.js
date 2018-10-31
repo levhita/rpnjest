@@ -1,7 +1,5 @@
 const evalPolish = require('../js/evalPolish');
 
-
-
 describe('Basic Operations', () => {
     test('"2" should return 2',()=> {
         expect(evalPolish('2')).toBe(2);
@@ -47,6 +45,10 @@ describe('Error Handling', () => {
     
     test('"" should throw an Error', () => {
         expect(() => evalPolish('')).toThrow(Error);
+    });
+    
+    test('"     2       " should throw an Error', () => {
+        expect(evalPolish('     2       ')).toBe(2);
     });
 });
 
